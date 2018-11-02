@@ -27,7 +27,7 @@ class SplashActivity : BaseActivity<BasePresenter<*>>() {
 
 
     override fun initData() {
-        goToAdvertisingActivity()
+        goToAdvertisingActivityWithPermissionCheck()
     }
 
 
@@ -37,6 +37,7 @@ class SplashActivity : BaseActivity<BasePresenter<*>>() {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        onRequestPermissionsResult(requestCode, grantResults)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -52,7 +53,7 @@ class SplashActivity : BaseActivity<BasePresenter<*>>() {
 
     @NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    private fun goToAdvertisingActivity() {
+    fun goToAdvertisingActivity() {
         splash.postDelayed({
             startActivity(Intent(this, AdvertisingActivity::class.java))
             finish()
@@ -84,7 +85,7 @@ class SplashActivity : BaseActivity<BasePresenter<*>>() {
                 toAppDetail(0x99)
             }
             setNegativeButton("取消") { _, _ ->
-                goToAdvertisingActivity()
+                finish()
             }
             setCancelable(false)
             setFinishOnTouchOutside(false)
