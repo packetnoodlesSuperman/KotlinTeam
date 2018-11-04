@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':module_live', ':module_video', ':lib_base', ':lib_core'
