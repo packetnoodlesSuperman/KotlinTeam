@@ -1,3 +1,9 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
 dependencies {
+    api 'com.alibaba:arouter-api:1.2.4'
+    kapt "com.github.hotchemi:permissionsdispatcher-processor:3.3.1"
     implementation project(":lib_core")
 }

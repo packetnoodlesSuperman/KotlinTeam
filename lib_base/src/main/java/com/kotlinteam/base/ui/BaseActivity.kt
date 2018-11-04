@@ -1,9 +1,9 @@
 package com.kotlinteam.base.ui
 
+import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 
-abstract class BaseActivity<out P: BasePresenter<*>>(var contentViewId: Int) : AppCompatActivity() {
+abstract class BaseActivity<out P: BasePresenter<*>>(var contentViewLayout: Int) : BaseDataBindingActivity<ViewDataBinding>(contentViewId = -1) {
 
     val mPresenter: P? by lazy {
         initPresenter()
@@ -11,7 +11,7 @@ abstract class BaseActivity<out P: BasePresenter<*>>(var contentViewId: Int) : A
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(contentViewId)
+        setContentView(contentViewLayout)
         mPresenter?.onAttachView(this)
         initView()
         initData()
@@ -19,7 +19,7 @@ abstract class BaseActivity<out P: BasePresenter<*>>(var contentViewId: Int) : A
 
     abstract fun initView()
 
-    abstract fun initData()
+    abstract override fun initData()
 
     abstract fun initPresenter(): P?
 

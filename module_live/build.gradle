@@ -1,3 +1,23 @@
+android {
+    defaultConfig{
+        if (isLiveModule.toBoolean()) {
+            applicationId "com.kotlinteam.live"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+    }
+
+    sourceSets.main {
+        manifest.srcFile "src/${isLiveModule.toBoolean() ? 'run' : 'main'}/AndroidManifest.xml"
+    }
+}
+
 dependencies {
     implementation project(":lib_base")
+    //路由
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

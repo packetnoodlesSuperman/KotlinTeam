@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.kotlinteam.base.widget.cardstack.CardStack
-        android:id="@+id/app_ac_home_card_view"
+    <data>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:padding="10dp"
-        app:card_enable_loop="false"
-        app:card_enable_rotation="true"
-        app:card_gravity="top"
-        app:card_margin="20dp"
-        app:card_stack_size="4"/>
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <com.kotlinteam.base.widget.cardstack.CardStack
+            android:id="@+id/app_ac_home_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:padding="10dp"
+            app:card_enable_loop="false"
+            app:card_enable_rotation="true"
+            app:card_gravity="top"
+            app:card_margin="20dp"
+            app:card_stack_size="4"/>
+
+    </LinearLayout>
+
+</layout>
+
+

@@ -6,11 +6,11 @@ abstract class BasePresenter<out V> {
 
     var view: WeakReference<@UnsafeVariance V>? = null
 
-    fun onAttachView(v: @UnsafeVariance V) {
+    open fun onAttachView(v: @UnsafeVariance V) {
         view = WeakReference(v)
     }
 
-    fun onDetachView() {
+    open fun onDetachView() {
         if (view == null) {
             return
         }
@@ -18,7 +18,7 @@ abstract class BasePresenter<out V> {
         view = null
     }
 
-    fun getView(): V? {
+    open fun getView(): V? {
         if (view == null) {
             return null
         }

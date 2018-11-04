@@ -1,3 +1,24 @@
+android {
+    defaultConfig{
+        if (isVideoMoudle.toBoolean()) {
+            applicationId "com.kotlinteam.video"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+    }
+
+    sourceSets.main {
+        manifest.srcFile "src/${isVideoMoudle.toBoolean() ? 'run' : 'main'}/AndroidManifest.xml"
+    }
+
+}
+
 dependencies {
     implementation project(":lib_base")
+    //路由
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">lib_base</string>
+    <string name="app_name">KotlinTeam</string>
+    <string name="lib_base_splash_bg_url">http://avatar.csdn.net/4/0/7/1_zhuhai__yizhi.jpg</string>
 </resources>

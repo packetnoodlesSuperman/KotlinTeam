@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/splash"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/activity_bg_splash"
-    tools:context=".ui.activity.SplashActivity"
-    android:orientation="vertical">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</LinearLayout>
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:background="#0f0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--app：imageUrl 加载网络背景图-->
+        <ImageView
+            android:scaleType="fitXY"
+            app:imageUrl="@{@string/lib_base_splash_bg_url}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/tv_ac_splash_content"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            tools:text="SplashActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+
+    </RelativeLayout>
+
+</layout>
