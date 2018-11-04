@@ -4,10 +4,8 @@ android {
             applicationId "com.kotlinteam.live"
         }
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
-            }
+        javaCompileOptions.annotationProcessorOptions {
+            arguments = [ moduleName : project.getName() ]
         }
     }
 
