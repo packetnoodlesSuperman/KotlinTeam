@@ -14,7 +14,8 @@
         <com.kotlinteam.base.widget.cardstack.CardStack
             android:id="@+id/app_ac_home_card_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:gravity="center"
@@ -24,6 +25,16 @@
             app:card_gravity="top"
             app:card_margin="20dp"
             app:card_stack_size="4"/>
+
+        <Button
+            android:padding="20dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/bt_goto_live"
+            android:textSize="26sp"
+            android:text="进入Live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

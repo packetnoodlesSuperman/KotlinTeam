@@ -1,9 +1,9 @@
 android {
     defaultConfig {
         applicationId "com.kotlinteam"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
+        kapt {
+            arguments {
+                arg("moduleName", project.getName())
             }
         }
     }
@@ -12,5 +12,6 @@ android {
 dependencies {
     implementation project(":lib_base")
     //路由
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    api 'com.alibaba:arouter-api:1.2.4'
+    kapt 'com.alibaba:arouter-compiler:1.1.4'
 }

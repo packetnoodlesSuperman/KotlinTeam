@@ -1,9 +1,7 @@
 package com.kotlinteam.ui
 
 import android.content.Intent
-import com.alibaba.android.arouter.launcher.ARouter
-import com.kotlinteam.base.R
-import com.kotlinteam.base.router.NavigationRouter
+import com.kotlinteam.R
 import com.kotlinteam.base.ui.BaseDataBindingActivity
 import com.kotlinteam.databinding.ActivitySplashBinding
 

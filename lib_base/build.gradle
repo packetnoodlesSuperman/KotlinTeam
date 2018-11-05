@@ -1,5 +1,4 @@
 dependencies {
-
     api 'com.alibaba:arouter-api:1.2.4'
     implementation project(":lib_core")
 }
