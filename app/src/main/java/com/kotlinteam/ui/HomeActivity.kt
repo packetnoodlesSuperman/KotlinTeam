@@ -20,6 +20,11 @@ class HomeActivity : BaseDataBindingActivity<ActivityHomeBinding>(R.layout.activ
             override fun getView(position: Int, contentView: View?, parent: ViewGroup): View {
                 val v = contentView!!.findViewById(R.id.item_card_view_tv) as TextView
                 v.text = arr[position % arr.size]
+                v.setOnClickListener(View.OnClickListener {
+                    if ("kotlin_module_live".equals(v.text)) {
+                        ARouter.getInstance().build(RouterPath.MoudleLive.LIVE_NAVIGATION).navigation()
+                    }
+                })
                 return contentView
             }
 
@@ -27,10 +32,5 @@ class HomeActivity : BaseDataBindingActivity<ActivityHomeBinding>(R.layout.activ
                 return Integer.MAX_VALUE
             }
         })
-        viewDataBinding.btGotoLive.setOnClickListener(View.OnClickListener {
-            ARouter.getInstance().build(RouterPath.MoudleLive.LIVE_NAVIGATION).navigation()
-        })
-
     }
-
 }

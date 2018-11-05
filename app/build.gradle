@@ -10,8 +10,13 @@ android {
 }
 
 dependencies {
+    if (!isLiveModule.toBoolean()) {
+        implementation project(':module_live')
+    }
+    if (!isVideoMoudle.toBoolean()) {
+        implementation project(':module_video')
+    }
     implementation project(":lib_base")
     //路由
-    api 'com.alibaba:arouter-api:1.2.4'
     kapt 'com.alibaba:arouter-compiler:1.1.4'
 }

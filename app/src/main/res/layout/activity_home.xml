@@ -26,16 +26,6 @@
             app:card_margin="20dp"
             app:card_stack_size="4"/>
 
-        <Button
-            android:padding="20dp"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/bt_goto_live"
-            android:textSize="26sp"
-            android:text="进入Live"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
     </LinearLayout>
 
 </layout>
