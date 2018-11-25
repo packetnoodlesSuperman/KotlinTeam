@@ -47,6 +47,13 @@ subprojects {
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             }
         }
+
+        /**
+         * 配置可以通过注解的方式给数据类序列化
+         */
+        androidExtensions {
+            experimental = true
+        }
     }
 
     dependencies {

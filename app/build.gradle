@@ -17,6 +17,7 @@ dependencies {
         implementation project(':module_video')
     }
     implementation project(":lib_base")
+    implementation project(":lib_core")
     //路由
     kapt 'com.alibaba:arouter-compiler:1.1.4'
 }

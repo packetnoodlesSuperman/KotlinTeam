@@ -15,4 +15,6 @@ dependencies {
     api 'io.reactivex.rxjava2:rxjava:2.1.5'
     //Rxjava适配器
     api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //依赖lib_base库
+    //api project(path: ':lib_base')
 }

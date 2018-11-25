@@ -2,6 +2,7 @@ package com.kotlinteam.base.ui
 
 import android.databinding.ViewDataBinding
 import android.os.Bundle
+import com.wangzwi1l.core.api.Api
 
 abstract class BaseActivity<out P: BasePresenter<*>>(var contentViewLayout: Int) : BaseDataBindingActivity<ViewDataBinding>(contentViewId = -1) {
 
