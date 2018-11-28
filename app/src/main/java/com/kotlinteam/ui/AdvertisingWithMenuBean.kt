@@ -20,4 +20,12 @@ data class Data(
         val modifyDate: Long,
         val type: Int,
         val actCommPic: String
-) : Parcelable
+) : Parcelable{
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
+    }
+
+    override fun hashCode(): Int {
+        return super.hashCode()
+    }
+}

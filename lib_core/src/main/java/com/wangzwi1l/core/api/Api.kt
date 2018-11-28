@@ -36,21 +36,24 @@ object Api {
         if (retrofitMap.containsKey(baseUrl)){
             retrofit = retrofitMap[baseUrl]!!
         } else {
-            if (BuildConfig.DEBUG) {
-                loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+            val builder :OkHttpClient.Builder= OkHttpClient.Builder().apply {
+                addInterceptor(HttpLoggingInterceptor().apply {
+                    if (BuildConfig.DEBUG) {
+                        level = HttpLoggingInterceptor.Level.BODY
+                    }
+                })
+                connectTimeout(TIME, TimeUnit.SECONDS)
+                readTimeout(TIME, TimeUnit.SECONDS)
             }
-            val client = OkHttpClient.Builder().let {
-                it.addInterceptor(loggingInterceptor)
-                it.connectTimeout(TIME, TimeUnit.SECONDS)
-                it.readTimeout(TIME, TimeUnit.SECONDS)
-                it.build()
-            }
-            retrofit = Retrofit.Builder().let {
-                it.baseUrl(baseUrl)
-                it.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                it.addConverterFactory(CustomConverter.instance)
-                it.client(client)
-                it.build()
+            retrofit = Retrofit.Builder().apply {
+                baseUrl(baseUrl)
+                addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                addConverterFactory(CustomConverter.instance)
+                client(builder.build())
+            }.build()
+            val a :String?= null
+            a?.let {
+                a
             }
             retrofitMap[baseUrl] = retrofit
         }
