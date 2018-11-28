@@ -1,6 +1,5 @@
 package com.wangzwi1l.core.api
 
-import android.util.Log
 import com.kotlinteam.core.BuildConfig
 import com.wangzwi1l.core.converter.CustomConverter
 import okhttp3.OkHttpClient
@@ -20,14 +19,6 @@ object Api {
 
     private val retrofitMap :HashMap<String,Retrofit> by lazy {
         HashMap<String,Retrofit>()
-    }
-
-    private val loggingInterceptor: HttpLoggingInterceptor by lazy {
-        HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
-            if (BuildConfig.DEBUG) {
-                Log.e("API", "okhttp message --------------------->  \n$it")
-            }
-        })
     }
 
     @JvmStatic
@@ -51,10 +42,6 @@ object Api {
                 addConverterFactory(CustomConverter.instance)
                 client(builder.build())
             }.build()
-            val a :String?= null
-            a?.let {
-                a
-            }
             retrofitMap[baseUrl] = retrofit
         }
 
