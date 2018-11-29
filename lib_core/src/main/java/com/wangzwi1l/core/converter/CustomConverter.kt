@@ -14,7 +14,7 @@ class CustomConverter constructor(val gson: Gson) : Converter.Factory() {
     }
 
     override fun responseBodyConverter(type: Type, annotations: Array<out Annotation>?, retrofit: Retrofit?): Converter<ResponseBody, *>? {
-        return CustomResponeBodyConverter<Any>(gson, type)
+        return CustomResponseBodyConverter<Any>(gson, type)
     }
 
     override fun requestBodyConverter(type: Type, parameterAnnotations: Array<out Annotation>?, methodAnnotations: Array<out Annotation>?, retrofit: Retrofit?): Converter<*, RequestBody>? {
